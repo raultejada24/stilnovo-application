@@ -1,7 +1,5 @@
 # Stilnovo - Reinvent your space: Where design with history finds its new home.
 
----
-
 ## 🎭 **Preparation 1: Project Definition**
 
 ### **Topic Description**
