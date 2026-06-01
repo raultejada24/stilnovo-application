@@ -520,6 +520,12 @@ sudo docker compose up -d
    ```bash
     https://localhost:8443/new/
    ```
+
+   **Optional:** If you need to change the frontend base path, create a `.env` file in the `frontend` folder:
+   ```properties
+   VITE_PUBLIC_URL=/new/
+   ```
+
 5. **Run the Frontend in development mode (Optional)**
 
    Start the Vite development server:
