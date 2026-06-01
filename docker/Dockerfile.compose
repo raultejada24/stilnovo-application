@@ -1,0 +1,29 @@
+# OCI Artifact: Stilnovo Docker Compose Configuration
+# =====================================================
+# This Dockerfile packages the docker-compose.yml as a distributable OCI artifact.
+# 
+# OCI Artifacts allow versioning and distributing orchestration configs just like Docker images.
+# Benefits:
+#   - Semantic versioning (v1.0.0, v1.1.0, etc.)
+#   - Automatic CI/CD publication on every commit
+#   - Easy rollback to previous compose configurations
+#   - Professional distribution alongside the app image
+#
+# Usage:
+#   # Pull the specific version you want
+#   docker pull raultejada24/stilnovo-compose:latest
+#   
+#   # Extract the compose file
+#   docker create --name temp raultejada24/stilnovo-compose:latest
+#   docker cp temp:/docker-compose.yml ./docker-compose.yml
+#   docker rm temp
+
+FROM scratch
+
+COPY docker-compose.yml /docker-compose.yml
+
+LABEL org.opencontainers.image.title="Stilnovo Docker Compose Configuration"
+LABEL org.opencontainers.image.description="Orchestration configuration for Stilnovo marketplace stack (app + database + networking)"
+LABEL org.opencontainers.image.authors="Stilnovo Team"
+LABEL org.opencontainers.image.vendor="Stilnovo"
+LABEL org.opencontainers.image.documentation="https://github.com/CodeURJC-DAW-2025-26/practica-daw-2025-26-grupo-5"
